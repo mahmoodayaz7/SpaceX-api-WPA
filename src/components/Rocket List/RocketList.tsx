@@ -3,7 +3,6 @@ import { RocketItemsQuery } from '../../generated/graphql';
 import Card from 'react-bootstrap/Card'
 import './styles.css';
 import Button from 'react-bootstrap/Button'
-import RocketItemContainer from '../Rocket Item/index'
 import { Link } from 'react-router-dom';
 
 

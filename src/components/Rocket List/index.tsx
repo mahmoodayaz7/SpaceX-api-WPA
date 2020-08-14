@@ -1,7 +1,7 @@
 import React from 'react';
-import { useRocketItemsQuery, RocketItemsQuery } from '../../generated/graphql';
+import { useRocketItemsQuery} from '../../generated/graphql';
 import RocketList from './RocketList';
-import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
+
 
 
 

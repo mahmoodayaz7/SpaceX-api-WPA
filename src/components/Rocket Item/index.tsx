@@ -1,5 +1,5 @@
 import React from 'react';
-import { useRocketItemsQuery,RocketItemsQuery  } from '../../generated/graphql';
+import { useRocketItemsQuery  } from '../../generated/graphql';
 import RocketItem from './RocketItem';
 import { useParams} from 'react-router-dom';
 

@@ -6,7 +6,6 @@ import { ApolloProvider as ApolloHooksProvider } from 'react-apollo-hooks';
 import './index.css';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import getApolloClient from './API-cache';
 import swDev from './service worker/serviceRegister'
 
 

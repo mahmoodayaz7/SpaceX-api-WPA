@@ -1,5 +1,4 @@
 import  React from 'react';
-import { RocketItemQuery } from '../../generated/graphql';
 import Table from 'react-bootstrap/Table';
 import Image from 'react-bootstrap/Image';
 
