@@ -2,40 +2,18 @@ import React from 'react';
 import { useRocketItemsQuery  } from '../../generated/graphql';
 import RocketItem from './RocketItem';
 import { useParams} from 'react-router-dom';
+import Spinner from 'react-bootstrap/Spinner'
 
-type data =  {
 
-active: boolean
-boosters: number
-company: string
-cost_per_launch: number
-country: string
-description: string
-engines:{
-number: number
-type: string
-version: string
-__typename: string
-}
-first_flight: string
-flickr_images: string[]
-mass:{
-kg: number
-__typename: string
-}
-rocket_id: string
-rocket_name: string
-rocket_type: string
-stages: number
-success_rate_pct: number
-__typename: string
-
-  }
 
 
 const RocketItemContainer = () => {
+  
 
   const { id } = useParams();
+
+  
+
 
   const { data, error, loading } = useRocketItemsQuery();
   let collection = localStorage.getItem('Rockets');
@@ -55,14 +33,20 @@ const currentItem = jsonData.rockets.find((rocket: { rocket_id: any; }) => rocke
 
 
 
+
 if (loading) {
-  return <div>Loading...</div>;
+  return <div data-testid = "loader" className = "loader">
+
+<Spinner  animation="border" role="status">
+<span className="sr-only">Loading...</span>
+</Spinner>
+  </div>;
 
 
 }
 
 if (error || !data) {
-  return <div>ERROR</div>;
+  return <div className = "error">ERROR</div>;
 }
 
 else {

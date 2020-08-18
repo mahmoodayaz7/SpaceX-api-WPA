@@ -4,6 +4,7 @@ import Card from 'react-bootstrap/Card'
 import './styles.css';
 import Button from 'react-bootstrap/Button'
 import { Link } from 'react-router-dom';
+import no_img from './images/no_image_available.jpg';
 
 
 
@@ -72,6 +73,7 @@ export default RocketList;
 
 const RocketList: React.FC<Props> = ({ data }) =>{ 
 
+  
 
 return (
 
@@ -79,7 +81,7 @@ return (
 
 
   <div id = "wrapper">
-<h1>Rockets Launched by SpaceX</h1>
+<h1 className = "launchHeading">Rockets Launched by SpaceX</h1>
 <div id ="cardContainer">
 {!!data.rockets &&
         data.rockets.map(
@@ -89,7 +91,7 @@ return (
 
 <Card id = "card" key = {i} aria-label = "card" style={{ width: '18rem' }}>
   <div id = "imgContainer">
-  <Card.Img id = "displayImg" data-testid = "rocket_img" variant="top" src = {rocket?.flickr_images?.[0] ?rocket.flickr_images[0] : undefined } />
+  <Card.Img id = "displayImg" data-testid = "rocket_img" variant="top" onError={(e:React.ChangeEvent<any>)=>{e.target.onerror = null; e.target.src=no_img}}    src = {rocket?.flickr_images?.[0] ?rocket.flickr_images[0] : no_img }  />
   </div>
   <Card.Body id = "cardBody">
     <div id = "cardtitletext">

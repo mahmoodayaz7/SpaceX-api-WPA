@@ -1,0 +1,70 @@
+.slider{
+
+    width: 100%;
+
+    margin: 0 auto;
+ 
+}
+
+.sliderHeading{
+
+ 
+    font-size: 10vw;
+    background-color: rgba(0,0,0,0.7);
+    
+}
+
+
+.sliderText{
+    background-color: rgba(0,0,0,0.7);
+    font-size: 2vw;
+    list-style-type: none;
+    
+}
+
+.companyDes{
+
+    margin-top: 10%;
+    font-size: 3vw;
+    color: black;
+    text-align: center;
+    margin-right: 10%;
+    margin-left: 10%;
+    text-shadow: 2px 10px 10px grey;
+   
+}
+
+.headquarter{
+text-align: center;
+margin-top: 10%;
+  background-color: rgb(29, 28, 28);
+ padding-bottom: 4%;
+
+  
+color: white;
+
+}
+
+#headquarterHeading{
+
+margin-bottom: 3vh;
+padding-top: 5%;
+text-decoration: underline;
+font-size: 3vw;
+
+}
+
+.headquarterText{
+    font-size: 2vw;
+    list-style-type: none;
+}
+
+.loader {
+    margin-top: 5vh;
+    text-align: center;
+}
+.error{
+    margin: 5vh;
+    text-align: center;
+    font-size: 10vw;
+}

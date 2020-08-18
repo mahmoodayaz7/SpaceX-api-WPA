@@ -1,6 +1,8 @@
 import  React from 'react';
 import Table from 'react-bootstrap/Table';
 import Image from 'react-bootstrap/Image';
+import no_img from './images/no_image_available.jpg';
+
 
 interface Props {
     data: {
@@ -37,23 +39,28 @@ __typename: string
 
 const RocketItem: React.FC<Props> = ({ data }) => {
 
+  
+  
+
+
   console.log(data);
 
 return(
   
 
     <div data-testid = "Rocket" >
-  <h1>{data?.rocket_name?.replace(/_/gi, " ")}</h1>
-  <h3 >{data?.description?.replace(/-/gi, " ")}</h3>
-  <Table striped bordered hover variant="dark">
-  <thead>
+  <h1 className = "launchHeading" >{data?.rocket_name?.replace(/_/gi, " ")}</h1>
+  <h3 className = "launchDes" >{data?.description?.replace(/-/gi, " ")}</h3>
+
+  <Table   striped bordered hover variant="dark" >
+  <thead className = "tableHeader">
     <tr>
-      <th>Specifications</th>
+      <th >Specifications</th>
       <th>Details</th>
     </tr>
   </thead>
 
-  <tbody>
+  <tbody className = "tableBody">
 
  { 
 
@@ -162,6 +169,7 @@ return (
 </tbody>
 </Table>
 
+
 {!!data?.flickr_images && 
 Object.entries(data?.flickr_images).map((img,k)=> {
 
@@ -171,7 +179,7 @@ return (
 
 
 
-  <Image data-testid = "imgs" key = {k} src={img[1] ?img[1] : undefined } rounded />
+  <Image className = "itemImgs" data-testid = "imgs" key = {k} src={img[1] ?img[1] : undefined }  onError={(e:React.ChangeEvent<any>)=>{e.target.onerror = null; e.target.src=no_img; e.target.className = "errorImg" }}   rounded />
    
   
 
